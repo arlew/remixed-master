@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: remixed-master_development
+
+test:
+  <<: *default
+  database: remixed-master_test
+
+production:
+  <<: *default
+  database: remixed-master_production
+  username: remixed-master
+  password: <%= ENV['MIX_MASTER_DATABASE_PASSWORD'] %>
