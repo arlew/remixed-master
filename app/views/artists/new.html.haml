@@ -1,0 +1,25 @@
+%h1 Add an Artist
+
+= form_for(Artist.new) do |f|
+  .row
+    = f.label :first_name
+    = f.text_field :first_name
+  .row
+    = f.label :middle_name
+    = f.text_field :middle_name
+  .row
+    = f.label :last_name
+    = f.text_field :last_name
+  .row
+    = f.label :image_path
+    = f.text_field :image_path
+  .row
+    %h4 Active
+    = f.label :active, 'True', value: true
+    = f.radio_button :active, true
+    = f.label :active, 'False', value: false
+    = f.radio_button :active, false
+
+  .row
+    = f.submit
+
