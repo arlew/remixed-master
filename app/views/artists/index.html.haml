@@ -4,3 +4,5 @@
   = link_to 'Create an Artist', new_artist_path
 
 .all-artists
+  - @artists.each do |artist|
+    = artist.full_name

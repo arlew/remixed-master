@@ -1,5 +1,6 @@
 class ArtistsController < ApplicationController
   def index
+    @artists = Artist.active.all
   end
 
   def new
