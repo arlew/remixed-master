@@ -24,6 +24,13 @@ describe Artist, type: :model do
   end
 
   describe '.active' do
+    it 'returns only active users' do
+      artist_active = create(:artist, active: true)
+      artist_inactive = create(:artist, active: false)
 
+      # expect(Artist.active).to include artist_active
+      # expect(Artist.active).not_to include artist_inactive
+      expect(Artist.active).to match_array [artist_active]
+    end
   end
 end

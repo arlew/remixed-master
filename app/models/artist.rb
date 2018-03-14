@@ -6,4 +6,8 @@ class Artist < ActiveRecord::Base
       "#{first_name} #{last_name}"
     end
   end
+
+  def self.active
+    where(active: true)
+  end
 end
